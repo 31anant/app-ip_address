@@ -44,17 +44,17 @@ class IpAddress {
   }
   /**
  * Calculate and return the first host IP address from a CIDR subnet.
- * @param {object} cidrObj - The IPv4 subnet expressed
+ * @param {String} cidrStr - The IPv4 subnet expressed
  *                 in CIDR format.
  * @param {callback} callback - A callback function.
  * @return {string} (firstIpAddress) - An IPv4 address.
  */
- getFirstIpAddress(cidrObj, callback) {
+ getFirstIpAddress(cidrStr, callback) {
   // Initialize return arguments for callback
   let firstIpAddress = null;
   let callbackError = null;
   // Instantiate an object from the imported class and assign the instance to variable cidr.
-  const cidr = new IPCIDR(cidrObj);
+  const cidr = new IPCIDR(cidrStr);
   // Initialize options for the toArray() method.
   // We want an offset of one and a limit of one.
   // This returns an array with a single element, the first host address from the subnet.
